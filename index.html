@@ -1,0 +1,475 @@
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>السيرة الذاتية - Mohamed Abdulrhman Bin Saeed</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+    ::selection {
+  background-color: #708090; /* لون أخضر جذاب */
+  color: white;
+}
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #eee;
+      transition: background-color 0.3s, color 0.3s;
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 20px;
+      direction: rtl;
+    }
+    body.light {
+      background-color: #fefefe;
+      color: #222;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #1e1e1e;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.light .container {
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.8;
+      direction: ltr;
+      position: relative;
+      display: inline-block;
+    }
+    header .whatsapp-container {
+      margin-top: 12px;
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #1e90ff;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #1e90ff;
+      position: relative;
+    }
+    body.light h2 {
+      color: #0066cc;
+    }
+    h2::before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: attr(data-icon);
+      margin-left: 8px;
+    }
+    ul {
+      list-style: none;
+      margin-left: 10px;
+    }
+    ul:not(.skills-grid) li::before {
+      content: '\2022';
+      color: #1e90ff;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.5em;
+    }
+    .skills-grid li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .skills-grid li::before {
+      content: '\2022';
+      color: #1e90ff;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-right: 0.5em;
+    }
+    .toggles {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+    }
+    button, .switch {
+      cursor: pointer;
+      border: none;
+      background: #1e90ff;
+      color: white;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      user-select: none;
+    }
+    button:hover, .switch:hover {
+      background: #005bb5;
+    }
+    #toggle-lang {
+      min-width: 100px;
+    }
+    .darkmode-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1e90ff;
+      border-radius: 25px;
+      padding: 5px 12px;
+      user-select: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      order: 2;
+    }
+    .darkmode-switch input {
+      display: none;
+    }
+    .slider {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background:#34C759;
+      border-radius: 30px;
+      padding: 3px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .slider:before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      transform: translateX(0);
+    }
+    input:checked + .slider {
+      background: #555555;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+      background: #FFFFFF;
+    }
+    .icon-container {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      user-select: none;
+    }
+    .icon.light {
+      fill: #ffeb3b;
+    }
+    .icon.dark {
+      fill: #ccc;
+    }
+    .whatsapp-btn {
+      background-color: #1e90ff;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      color: white;
+      box-shadow: 0 0 12px rgba(30,144,255,0.7);
+      transition: box-shadow 0.3s ease;
+      text-decoration: none;
+      user-select: none;
+      min-width: 180px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .whatsapp-btn:hover {
+      box-shadow: 0 0 20px rgba(30,144,255,1);
+    }
+    .whatsapp-icon {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+    section {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      padding: 15px;
+    }
+    section:hover {
+      transform: scale(1.015);
+      box-shadow: 0 0 20px rgba(30, 144, 255, 0.3);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 15px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .toggles {
+        gap: 15px;
+      }
+      .whatsapp-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+        min-width: 140px;
+      }
+      .darkmode-switch {
+        order: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+ <div class="container" id="cv-container">
+
+    <div class="toggles" style="justify-content:center;">
+      <button id="toggle-lang" aria-label="Toggle Language">English</button>
+      
+      <label class="darkmode-switch" aria-label="Toggle Dark Mode">
+        <div class="icon-container">
+          <svg id="icon-dark" class="icon dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" title="Dark mode (moon)">
+            <path d="M264 480A232 232 0 0 1 32 248c0-112.9 91.5-208 204-208 22.1 0 43.5 4.1 63.5 11.6 10.6 3.9 15.2 16.8 7.8 25.8-29.9 40.3-29.9 96 0 136.3 7.4 9 2.8 21.9-7.8 25.8C307.5 451.9 286.1 456 264 456c-61.9 0-112-44.1-112-112 0-26.1 9.4-50 24.6-68.5 5-6.9 14.9-8 20.7-2.4 4.8 4.4 7.6 11.4 7.6 18.8 0 21.2 17.2 38.5 38.5 38.5 7.4 0 14.3 2.8 18.8 7.6 5.6 5.8 4.5 15.7-2.4 20.7-18.5 15.2-42.4 24.6-68.5 24.6z"/>
+          </svg>
+          <svg id="icon-light" class="icon light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" title="Light mode (sun)">
+            <path d="M256 384a128 128 0 1 0 0-256 128 128 0 0 0 0 256zm0-336c-10.3 0-18.7 8.4-18.7 18.7v43.3c0 10.3 8.4 18.7 18.7 18.7s18.7-8.4 18.7-18.7V66.7c0-10.3-8.4-18.7-18.7-18.7zm0 352c-10.3 0-18.7 8.4-18.7 18.7v43.3c0 10.3 8.4 18.7 18.7 18.7s18.7-8.4 18.7-18.7v-43.3c0-10.3-8.4-18.7-18.7-18.7zm198.3-174.6l-30.6-30.6c-7.3-7.3-19.1-7.3-26.4 0s-7.3 19.1 0 26.4l30.6 30.6c7.3 7.3 19.1 7.3 26.4 0s7.3-19.1 0-26.4zm-371.6 0l-30.6-30.6c-7.3-7.3-19.1-7.3-26.4 0s-7.3 19.1 0 26.4l30.6 30.6c7.3 7.3 19.1 7.3 26.4 0s7.3-19.1 0-26.4zm277.3 128.4h-43.3c-10.3 0-18.7 8.4-18.7 18.7s8.4 18.7 18.7 18.7h43.3c10.3 0 18.7-8.4 18.7-18.7s-8.4-18.7-18.7-18.7zm-236.6 0h-43.3c-10.3 0-18.7 8.4-18.7 18.7s8.4 18.7 18.7 18.7h43.3c10.3 0 18.7-8.4 18.7-18.7s-8.4-18.7-18.7-18.7z"/>
+          </svg>
+        </div>
+        <input type="checkbox" id="toggle-theme" aria-checked="false" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <header>
+      <h1 data-en="Mohamed Abdulrhman Bin Saeed" data-ar="محمد عبدالرحمن بن سعيد">محمد عبدالرحمن بن سعيد</h1>
+      <p data-en="Riyadh, Saudi Arabia | mwdeng1@hotmail.com | +966 50 993 9693" data-ar="الرياض، المملكة العربية السعودية | mwdeng1@hotmail.com | +966 50 993 9693" style="direction:ltr;">
+        الرياض، المملكة العربية السعودية | mwdeng1@hotmail.com | +966 50 993 9693
+      </p>
+      <div class="whatsapp-container">
+  <a href="https://wa.me/966509939693" target="_blank" class="whatsapp-btn" id="whatsapp-link">
+  <img src="https://b.top4top.io/p_3493mwncy1.png" alt="WhatsApp" class="whatsapp-icon">
+  <span id="whatsapp-text">تواصل واتساب</span>
+</a>
+
+
+      </div>
+    </header>
+
+    <section>
+      <h2 data-en="Target Job Title" data-ar="الوظيفة المستهدفة">الوظيفة المستهدفة</h2>
+      <p data-en="Front-End Web Developer | Web Programmer | Mobile App Developer | UI/UX & Database Enthusiast"
+         data-ar="مطور واجهات أمامية | مبرمج ويب | مطور تطبيقات جوال | مهتم بـ UI/UX وقواعد البيانات">
+        مطور واجهات أمامية | مبرمج ويب | مطور تطبيقات جوال | مهتم بـ UI/UX وقواعد البيانات
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="Professional Summary" data-ar="ملخص مهني">ملخص مهني</h2>
+      <p data-en="A fresh graduate specialized in programming Engineering and Web Development, with a strong foundation in front-end development, web programming, database management, and smart device programming. Experienced in building responsive websites and mobile applications using modern technologies. Passionate about roles related to web development, UI/UX design, database systems, and cross-platform mobile app development. Based in Riyadh, with willingness to relocate or work in other cities as needed."
+         data-ar="خريج جديد متخصص في هندسة البرمجة وتطوير الويب، يمتلك مهارات قوية في تطوير الواجهات الأمامية، برمجة الويب، إدارة قواعد البيانات، وبرمجة الأجهزة الذكية. لديه خبرة في بناء مواقع وتطبيقات جوال متجاوبة باستخدام تقنيات حديثة. شغوف بالأدوار المتعلقة بتطوير الويب، تصميم UI/UX، أنظمة قواعد البيانات، وتطوير التطبيقات متعددة المنصات. مقيم في الرياض ومستعد للانتقال أو العمل في مدن أخرى حسب الحاجة.">
+        خريج جديد متخصص في هندسة البرمجة وتطوير الويب، يمتلك مهارات قوية في تطوير الواجهات الأمامية، برمجة الويب، إدارة قواعد البيانات، وبرمجة الأجهزة الذكية. لديه خبرة في بناء مواقع وتطبيقات جوال متجاوبة باستخدام تقنيات حديثة. شغوف بالأدوار المتعلقة بتطوير الويب، تصميم UI/UX، أنظمة قواعد البيانات، وتطوير التطبيقات متعددة المنصات. مقيم في الرياض ومستعد للانتقال أو العمل في مدن أخرى حسب الحاجة.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="Education" data-ar="التعليم">التعليم</h2>
+      <p data-en="Bachelor’s Degree in programming and Web Development Engineering"
+         data-ar="درجة البكالوريوس في هندسة البرمجة وتطوير الويب">درجة البكالوريوس في هندسة البرمجة وتطوير الويب</p>
+      <p data-en="Technical College – Buraidah, Saudi Arabia"
+         data-ar="الكلية التقنية – بريدة، المملكة العربية السعودية">الكلية التقنية – بريدة، المملكة العربية السعودية</p>
+      <p data-en="GPA: 4.3 / 5.0"
+         data-ar="المعدل التراكمي: 4.3 / 5.0">المعدل التراكمي: 4.3 / 5.0</p>
+      <p data-en="Graduation Year: 2025"
+         data-ar="سنة التخرج: 2025">سنة التخرج: 2025</p>
+    </section>
+
+    <section>
+      <h2 data-en="Technical Skills" data-ar="المهارات التقنية">المهارات التقنية</h2>
+      <ul class="skills-grid">
+        <li data-en="Web Development: HTML5, JavaScript, PHP" data-ar="تطوير الويب: HTML5، جافاسكريبت، PHP">تطوير الويب: HTML5، جافاسكريبت، PHP</li>
+        <li data-en="Mobile Development: Android Studio, Flutter, Dart" data-ar="تطوير الجوال: أندرويد ستوديو، فلاتر، دارت">تطوير الجوال: أندرويد ستوديو، فلاتر، دارت</li>
+        <li data-en="Databases: SQL, phpMyAdmin" data-ar="قواعد البيانات: SQL، phpMyAdmin">قواعد البيانات: SQL، phpMyAdmin</li>
+        <li data-en="Design Tools: Canva" data-ar="أدوات التصميم: Canva">أدوات التصميم: Canva</li>
+        <li data-en="Cloud Platforms: Microsoft Azure" data-ar="منصات الحوسبة السحابية: مايكروسوفت أزور">منصات الحوسبة السحابية: مايكروسوفت أزور</li>
+        <li data-en="Other Skills: UI/UX principles, responsive design, cross-platform app development" data-ar="مهارات أخرى: مبادئ UI/UX، التصميم المتجاوب، تطوير التطبيقات متعددة المنصات">مهارات أخرى: مبادئ UI/UX، التصميم المتجاوب، تطوير التطبيقات متعددة المنصات</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Soft Skills" data-ar="المهارات الشخصية">المهارات الشخصية</h2>
+      <ul>
+        <li data-en="Strong communication and interpersonal skills" data-ar="مهارات تواصل قوية وقدرة على التعامل مع الآخرين">مهارات تواصل قوية وقدرة على التعامل مع الآخرين</li>
+        <li data-en="Effective teamwork and collaboration" data-ar="العمل الجماعي والتعاون الفعال">العمل الجماعي والتعاون الفعال</li>
+        <li data-en="Problem-solving mindset and analytical thinking" data-ar="تفكير تحليلي وحل المشكلات">تفكير تحليلي وحل المشكلات</li>
+        <li data-en="Adaptability to new technologies and work environments" data-ar="القدرة على التكيف مع التقنيات وبيئات العمل الجديدة">القدرة على التكيف مع التقنيات وبيئات العمل الجديدة</li>
+        <li data-en="Self-motivated with a passion for continuous learning" data-ar="دافع ذاتي وشغف للتعلم المستمر">دافع ذاتي وشغف للتعلم المستمر</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Languages" data-ar="اللغات">اللغات</h2>
+      <ul>
+        <li data-en="Arabic – Native" data-ar="العربية – اللغة الأم">العربية – اللغة الأم</li>
+        <li data-en="English – Intermediate" data-ar="الإنجليزية – متوسط">الإنجليزية – متوسط</li>
+      </ul>
+    </section>
+
+    <section>
+    <h2 data-en="Projects" data-ar="المشاريع">المشاريع</h2>
+      <p data-en="Graduation Project – Book Exchange & Rental Web Platform"
+         data-ar="مشروع التخرج – منصة تبادل واستئجار الكتب">مشروع التخرج – منصة تبادل واستئجار الكتب</p>
+      <ul>
+        <li data-en="Developed a full-stack website for book sharing and renting purposes. The system includes features for user registration, book listings, and rental management."
+            data-ar="تم تطوير موقع متكامل لتبادل واستئجار الكتب، يشمل تسجيل المستخدمين، قوائم الكتب، وإدارة الإيجارات.">
+          تم تطوير موقع متكامل لتبادل واستئجار الكتب، يشمل تسجيل المستخدمين، قوائم الكتب، وإدارة الإيجارات.
+        </li>
+        <li data-en="Worked on front-end interface and backend logic using: PHP, JavaScript, HTML5, phpMyAdmin, SQL"
+            data-ar="عملت على واجهة المستخدم والمنطق الخلفي باستخدام: PHP، جافاسكريبت، HTML5، phpMyAdmin، SQL">
+          عملت على واجهة المستخدم والمنطق الخلفي باستخدام: PHP، جافاسكريبت، HTML5، phpMyAdmin، SQL
+        </li>
+        <li data-en="Responsibilities: UI design, database integration, and user flow development"
+            data-ar="المسؤوليات: تصميم الواجهة، دمج قواعد البيانات، وتطوير سير المستخدم">
+          المسؤوليات: تصميم الواجهة، دمج قواعد البيانات، وتطوير سير المستخدم
+        </li>
+        <li data-en="Outcome: Successfully delivered as a graduation project demonstrating full web development lifecycle."
+            data-ar="النتيجة: تسليم ناجح للمشروع كمشروع تخرج يعكس دورة تطوير الويب كاملة.">
+          النتيجة: تسليم ناجح للمشروع كمشروع تخرج يعكس دورة تطوير الويب كاملة.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-en="Work Experience" data-ar="الخبرات العملية">الخبرات العملية</h2>
+      <p data-en="No prior work experience – available for full-time, internship, or entry-level opportunities."
+         data-ar="لا يوجد خبرات عملية سابقة – متاح للعمل بدوام كامل، تدريب، أو فرص مبتدئة.">لا يوجد خبرات عملية سابقة – متاح للعمل بدوام كامل، تدريب، أو فرص مبتدئة.</p>
+    </section>
+
+  </div>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const toggleLangBtn = document.getElementById('toggle-lang');
+      const toggleTheme = document.getElementById('toggle-theme');
+      const iconDark = document.getElementById('icon-dark');
+      const iconLight = document.getElementById('icon-light');
+      const whatsappLink = document.getElementById('whatsapp-link');
+      const whatsappText = document.getElementById('whatsapp-text');
+      const cvContainer = document.getElementById('cv-container');
+
+      let currentLang = 'en'; // افتراضي عربي
+      let darkMode = true;    // الوضع الليلي مفعل افتراضي
+
+      function updateLanguage() {
+        if (currentLang === 'ar') {
+          document.documentElement.lang = 'ar';
+          document.documentElement.dir = 'rtl';
+          body.style.direction = 'rtl';
+          toggleLangBtn.textContent = 'English';
+        } else {
+          document.documentElement.lang = 'en';
+          document.documentElement.dir = 'ltr';
+          body.style.direction = 'ltr';
+          toggleLangBtn.textContent = 'العربية';
+        }
+
+        const elems = cvContainer.querySelectorAll('[data-en][data-ar]');
+        elems.forEach(el => {
+          el.textContent = currentLang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        });
+      }
+
+      function updateTheme() {
+        if (darkMode) {
+          body.classList.remove('light');
+          toggleTheme.checked = false; // unchecked = dark mode
+          iconDark.style.display = 'inline-block';
+          iconLight.style.display = 'none';
+        } else {
+          body.classList.add('light');
+          toggleTheme.checked = true; // checked = light mode
+          iconDark.style.display = 'none';
+          iconLight.style.display = 'inline-block';
+        }
+      }
+
+      toggleLangBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        updateLanguage();
+        updateWhatsappLink();
+      });
+
+      toggleTheme.addEventListener('change', () => {
+        darkMode = !toggleTheme.checked;
+        updateTheme();
+      });
+
+      function updateWhatsappLink() {
+        const phoneNumber = '+966509939693';
+        const message = currentLang === 'ar' ? 'مرحباً محمد، أود التواصل معك.' : 'Hello Mohamed, I would like to contact you.';
+        whatsappLink.href = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+        whatsappLink.setAttribute('aria-label', currentLang === 'ar' ? 'التواصل عبر واتساب' : 'Chat with me on WhatsApp');
+        whatsappText.textContent = currentLang === 'ar' ? 'التواصل عبر واتساب' : 'Chat with me on WhatsApp';
+      }
+
+      // تهيئة الصفحة عند التحميل
+      updateLanguage();
+      updateTheme();
+      updateWhatsappLink();
+
+    })();
+  </script>
+</body>
+</html>
