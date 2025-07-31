@@ -9,7 +9,7 @@
     
     @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
     ::selection {
-  background-color: #708090; /* لون أخضر جذاب */
+  background-color: #708090; 
   color: white;
 }
     * {
@@ -409,8 +409,8 @@
       const whatsappText = document.getElementById('whatsapp-text');
       const cvContainer = document.getElementById('cv-container');
 
-      let currentLang = 'en'; // افتراضي عربي
-      let darkMode = true;    // الوضع الليلي مفعل افتراضي
+      let currentLang = 'en'; 
+      let darkMode = true;    
 
       function updateLanguage() {
         if (currentLang === 'ar') {
@@ -434,12 +434,12 @@
       function updateTheme() {
         if (darkMode) {
           body.classList.remove('light');
-          toggleTheme.checked = false; // unchecked = dark mode
+          toggleTheme.checked = false; 
           iconDark.style.display = 'inline-block';
           iconLight.style.display = 'none';
         } else {
           body.classList.add('light');
-          toggleTheme.checked = true; // checked = light mode
+          toggleTheme.checked = true; 
           iconDark.style.display = 'none';
           iconLight.style.display = 'inline-block';
         }
@@ -464,7 +464,6 @@
         whatsappText.textContent = currentLang === 'ar' ? 'التواصل عبر واتساب' : 'Chat with me on WhatsApp';
       }
 
-      // تهيئة الصفحة عند التحميل
       updateLanguage();
       updateTheme();
       updateWhatsappLink();
